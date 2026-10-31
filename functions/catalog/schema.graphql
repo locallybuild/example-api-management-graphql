@@ -1,0 +1,22 @@
+"""
+The catalog's GraphQL schema. The function answers queries against it, and
+Terraform gives the same file to API Management as the API's schema, so the
+gateway checks each query against it before forwarding it.
+"""
+type Query {
+  "Every product on sale."
+  products: [Product!]!
+
+  "One product, or null if there's no product with that id."
+  product(id: ID!): Product
+
+  "Which way the request came in: the API Management instance's name, or direct."
+  via: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  price: Float!
+  currency: String!
+}

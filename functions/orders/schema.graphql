@@ -1,0 +1,24 @@
+"""
+The orders app's GraphQL schema. The function answers operations against it,
+and Terraform gives the same file to API Management as the API's schema, so
+the gateway checks each operation against it before forwarding it.
+"""
+type Query {
+  "The orders placed so far, newest first."
+  orders: [Order!]!
+
+  "Which way the request came in: the API Management instance's name, or direct."
+  via: String!
+}
+
+type Mutation {
+  "Places an order for a quantity (1 to 100) of one product."
+  placeOrder(productId: ID!, quantity: Int = 1): Order!
+}
+
+type Order {
+  id: ID!
+  productId: ID!
+  quantity: Int!
+  placedAt: String!
+}

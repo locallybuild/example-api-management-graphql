@@ -1,0 +1,14 @@
+{
+  "name": "orders",
+  "version": "1.0.0",
+  "description": "The orders Function App: a GraphQL API that takes and lists orders",
+  "main": "src/functions/*.js",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.16.0",
+    "graphql": "^16.11.0"
+  }
+}
