@@ -60,7 +60,7 @@ resource "azurerm_linux_function_app" "main" {
 
   site_config {
     application_stack {
-      node_version = "22"
+      node_version = "24"
     }
   }
 
