@@ -5,7 +5,7 @@
   "main": "src/functions/*.js",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "dependencies": {
     "@azure/functions": "^4.17.1",
