@@ -62,15 +62,11 @@ jobs:
 
       - name: Install the functions/catalog dependencies
         working-directory: functions/catalog
-        run: npm install
+        run: npm ci
 
       - name: Install the functions/orders dependencies
         working-directory: functions/orders
-        run: npm install
-
-      - name: Install the app/storefront dependencies
-        working-directory: app/storefront
-        run: npm install
+        run: npm ci
 
       - uses: locallybuild/setup-locally@dc4fb46b46af5deded2a7e8ce1b6da7c337240f0 # v1.2.0
         with:
